@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memo-ap</title>
+    <link rel="stylesheet" href="css/turi.css">
+</head>
+
+<body>
+    <header>
+        <h1>GET FISH COUNTER</h1>
+        <p>今日の釣果は？</p>
+    </header>
+    <main>
+
+        <div class="chouka"><textarea id="chouka1">匹</textarea></div>
+        <ul class="sonohi">
+            <li id="hiji"><label>日付・時間</label>　　<input type="datetime-local" id="hiji1" />
+            </li>
+            <li id="tenki"><label>　天気</label> 　　　　<select name="tenkou">
+                    <option value="晴れ">晴れ</option>
+                    <option value="晴れ時々曇り">晴れ時々曇り</option>
+                    <option value="曇り">曇り</option>
+                    <option value="曇り時々雨">曇り時々雨</option>
+                    <option value="雨">雨</option>
+                </select>
+            </li>
+
+        </ul>
+        <div>
+            <h2>タックル</h2>
+        </div>
+        <ul class="tackle">
+            <li id="rod">ロッド <textarea name="" id="input"></textarea></li>
+            <li id="reel">リール <textarea name="" id="input"></textarea></li>
+            <li id="luer">ルアー <textarea name="" id="input"></textarea></li>
+        </ul>
+        <div class="OK">
+            <li id="OK">OK!</li>
+        </div>
+
+        <!--<div id="naiyou"><textarea name="" id="" style="width: 70%;height: 130px;"></textarea>-->
+        </div>
+        <div id="rireki"></div>
+        <ul class="s-c">
+            <li id="save">Save</li>
+            <li id="clear">Clear</li>
+
+        </ul>
+
+
+
+    </main>
+    <footer>
+        <div class="kako">
+            <li id="kako">過去の釣果</li>
+
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="" src="">
+       //const rireki=[];
+       $('#OK').on('click', function () {
+        //const sonohi=[.sonohi,.tackle];
+        //const hiji1 = $("#hiji1").val();
+        const chouka1 = $("#chouka1").val();
+        console.log(chouka1);
+        localStorage.setItem("memo", chouka1);
+        //const input2 = $("#tenki").val();
+        //const text1 = $("#rod").val("");
+        //const text2 = $("#reel").val("");
+        //const text3 = $("#luer").val("");
+        //const data = {
+            //title: input1;
+            //text1: text1;
+
+            
+        //}
+        console.log(data);
+        rireki.unshift();
+        const json = JSON.stringify(data);
+        console.log(json);
+        localStorage.setItem("memo", json);
+       
+
+
+       });
+       $('#save').on('click', function () {
+        onsole.log(data);
+        const json = JSON.stringify(data);
+        console.log(json);
+        localStorage.setItem("memo", json);
+       });
+       $('#clear').on('click', function () {
+         localStorage.removeItem("memo");
+        $("#text_area").val("");
+        $("#input").val("");
+
+      });
+       
+
+    </script>
+</body>
+
+</html>
